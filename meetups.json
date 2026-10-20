@@ -1,0 +1,141 @@
+{
+  "meetups": [
+    {
+      "name": "BurbSec Prime",
+      "category": "social",
+      "city": "Schaumburg",
+      "country": "USA",
+      "lat": 42.0466,
+      "lng": -88.0373,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "First Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "Casual social meetup for security folks: no dues, no presentations, no recruiters. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec North",
+      "category": "social",
+      "city": "Glenview",
+      "country": "USA",
+      "lat": 42.0698,
+      "lng": -87.7878,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Second Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "Casual social meetup for security folks. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec West",
+      "category": "social",
+      "city": "Naperville",
+      "country": "USA",
+      "lat": 41.7728,
+      "lng": -88.1479,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Third Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "Casual social meetup for security folks. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec East",
+      "category": "social",
+      "city": "Chicago",
+      "country": "USA",
+      "lat": 41.9235,
+      "lng": -87.7081,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Last Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "The largest BurbSec chapter, in Logan Square. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "DEF CON",
+      "category": "conference",
+      "city": "Las Vegas",
+      "country": "USA",
+      "lat": 36.1316,
+      "lng": -115.1517,
+      "website": "https://defcon.org",
+      "schedule": "Annual conference (August)",
+      "type": "Cybersecurity",
+      "description": "Local DEF CON Groups meet year-round worldwide; see defcon.org for a group near you."
+    },
+    {
+      "name": "OWASP London",
+      "category": "organization",
+      "city": "London",
+      "country": "UK",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "website": "https://owasp.org/www-chapter-london/",
+      "schedule": "Monthly meetings",
+      "type": "Application Security"
+    },
+    {
+      "name": "Black Hat USA",
+      "category": "conference",
+      "city": "Las Vegas",
+      "country": "USA",
+      "lat": 36.0909,
+      "lng": -115.1761,
+      "website": "https://www.blackhat.com",
+      "schedule": "Annual conference (August)",
+      "type": "Information Security"
+    },
+    {
+      "name": "PyData Berlin",
+      "category": "tech",
+      "city": "Berlin",
+      "country": "Germany",
+      "lat": 52.5200,
+      "lng": 13.4050,
+      "website": "https://berlin.pydata.org",
+      "schedule": "Monthly meetups",
+      "type": "Data Science & Python"
+    },
+    {
+      "name": "Tokyo Tech Meetup",
+      "category": "tech",
+      "city": "Tokyo",
+      "country": "Japan",
+      "lat": 35.6762,
+      "lng": 139.6503,
+      "website": "https://www.meetup.com/tokyotechmeetup/",
+      "schedule": "Monthly",
+      "type": "Technology & Startups"
+    },
+    {
+      "name": "InfoSec Melbourne",
+      "category": "social",
+      "city": "Melbourne",
+      "country": "Australia",
+      "lat": -37.8136,
+      "lng": 144.9631,
+      "website": "https://www.meetup.com/infosec-melbourne/",
+      "schedule": "Monthly",
+      "type": "Information Security"
+    },
+    {
+      "name": "BSides Mumbai",
+      "category": "conference",
+      "city": "Mumbai",
+      "country": "India",
+      "lat": 19.0760,
+      "lng": 72.8777,
+      "website": "https://bsidesmumbai.org",
+      "schedule": "Annual",
+      "type": "Information Security"
+    },
+    {
+      "name": "SecTor",
+      "category": "conference",
+      "city": "Toronto",
+      "country": "Canada",
+      "lat": 43.6440,
+      "lng": -79.3860,
+      "website": "https://sector.ca",
+      "schedule": "Annual conference",
+      "type": "Security"
+    }
+  ]
+}
