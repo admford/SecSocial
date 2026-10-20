@@ -13,6 +13,41 @@
       "description": "Casual social meetup for security folks: no dues, no presentations, no recruiters. Check the Meetup page for the current venue."
     },
     {
+      "name": "BurbSec Pilsen",
+      "category": "social",
+      "city": "Chicago",
+      "country": "USA",
+      "lat": 41.85382530593631,
+      "lng": -87.65278866546329,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Second Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "Casual social meetup for security folks. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec South",
+      "category": "social",
+      "city": "Hickory Hills",
+      "country": "USA",
+      "lat": 41.721953247642276,
+      "lng":  -87.81821843793688,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Second Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "Casual social meetup for security folks. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec Northwest",
+      "category": "social",
+      "city": "Crystal Lake",
+      "country": "USA",
+      "lat": 42.245531208433405,
+      "lng": -88.3166528201958,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Fourth Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "Casual social meetup for security folks. Check the Meetup page for the current venue."
+    },    {
       "name": "BurbSec North",
       "category": "social",
       "city": "Wheeling",
@@ -29,12 +64,48 @@
       "category": "social",
       "city": "Naperville",
       "country": "USA",
-      "lat": 41.7728,
-      "lng": -88.1479,
+      "lat": 41.80472147468378,
+      "lng": -88.12833127726628,
       "website": "https://www.meetup.com/burbsec/",
       "schedule": "Third Thursday of the month, from about 6 PM",
       "type": "Cybersecurity",
       "description": "Casual social meetup for security folks. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec South Bend",
+      "category": "social",
+      "city": "Mishawaka",
+      "country": "USA",
+      "lat": 41.65848892555411, 
+      "lng": -86.17643554712234,
+      "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Second Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "The largest BurbSec chapter, in Logan Square. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec Milwaukee",
+      "category": "social",
+      "city": "Greendale",
+      "country": "USA",
+      "lat": 42.94725126549995,  
+      "lng": -88.00535194432858,
+      "website": "https://www.meetup.com/burbsec-mke/events/",
+      "schedule": "Third Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "The largest BurbSec chapter, in Logan Square. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec Minneapolis",
+      "category": "social",
+      "city": "Fridley",
+      "country": "USA",
+      "lat": 45.05562134589388, 
+      "lng": -93.27345787151661,
+      "website": "https://www.eventbrite.com/e/burbsec-mpls-infosec-meetup-tickets-1749486103029",
+      "schedule": "Third Thursday of the month, from about 4 PM",
+      "type": "Cybersecurity",
+      "description": "The largest BurbSec chapter, in Logan Square. Check the Meetup page for the current venue."
     },
     {
       "name": "BurbSec East",
@@ -44,6 +115,30 @@
       "lat": 41.92003522323685,
       "lng": -87.69282022970451,
       "website": "https://www.meetup.com/burbsec/",
+      "schedule": "Last Thursday of the month, from about 6 PM",
+      "type": "Cybersecurity",
+      "description": "The largest BurbSec chapter, in Logan Square. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec Las Vegas",
+      "category": "social",
+      "city": "Las Vegas",
+      "country": "USA",
+      "lat": 36.07712193212639,
+      "lng": -115.26134821278752,
+      "website": "https://www.meetup.com/burbsecvegas/",
+      "schedule": "Second Thursday of the month, from about 5:30 PM",
+      "type": "Cybersecurity",
+      "description": "The largest BurbSec chapter, in Logan Square. Check the Meetup page for the current venue."
+    },
+    {
+      "name": "BurbSec Galway",
+      "category": "social",
+      "city": "Galway",
+      "country": "Ireland",
+      "lat": 53.27475870321143, 
+      "lng": -9.046951915410576,
+      "website": "https://www.meetup.com/burbsec-galway/",
       "schedule": "Last Thursday of the month, from about 6 PM",
       "type": "Cybersecurity",
       "description": "The largest BurbSec chapter, in Logan Square. Check the Meetup page for the current venue."
