@@ -26,6 +26,7 @@ body:
         - Organization / chapter
         - Student group
         - General tech
+        - Makerspace / community
     validations:
       required: true
 
@@ -63,6 +64,7 @@ body:
     id: schedule
     attributes:
       label: Schedule
+      description: For makerspaces and community organizations, give the open hours.
       placeholder: e.g., Second Thursday of every month, 6:00 PM
     validations:
       required: true
