@@ -53,7 +53,7 @@
       "category": "social",
       "city": "Wheeling (IL)",
       "country": "USA",
-      "lat": 42.13628636054314, 
+      "lat": 42.13628636054314,
       "lng": -87.904216306922,
       "website": "https://www.meetup.com/burbsec/",
       "schedule": "Second Thursday of the month, from about 6 PM",
@@ -178,6 +178,18 @@
       "schedule": "Once every two years",
       "type": "Cybersecurity",
       "description": "One of the original conferences held in Chicago for over a decade at this point."
+    },
+    {
+      "name": "Cyphercon",
+      "category": "conference",
+      "city": "Milwaukee (WI)",
+      "country": "USA",
+      "lat": 43.039,
+      "lng": -87.9175,
+      "website": "https://cyphercon.com",
+      "schedule": "Yearly in Spring",
+      "type": "Cybersecurity",
+      "description": "CypherCon is Wisconsin’s largest technology, cybersecurity, and hacker conference, bringing together information security professionals, hackers, technology leaders, creators, artists, makers, and curious innovators."
     }
   ]
 }
