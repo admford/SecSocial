@@ -298,6 +298,18 @@
       "schedule": "Yearly at about the same time as DEF CON and Blackhat",
       "type": "Cybersecurity",
       "description": "Probably one of the most well known of the BSides events across the world. A fixture during Hacker Summer Camp."
+    },
+    {
+      "name": "ISSA Chicago",
+      "category": "organization",
+      "city": "Rosemont (IL)",
+      "country": "USA",
+      "lat": 41.9877,
+      "lng": -87.8591,
+      "website": "https://www.issa-chicago.org/",
+      "schedule": "First Thursday of the month",
+      "type": "Cybersecurity",
+      "description": "Chicago chapter of ISSA, which is very active locally and at local conferences. Regularly helps out students and people new to the field."
     }
   ]
 }
