@@ -8,6 +8,7 @@ CATEGORIES = {
     "organization": "Organization / chapter",
     "student": "Student group",
     "tech": "General tech",
+    "community": "Makerspace / community",
 }
 LABEL_TO_CATEGORY = {label.lower(): key for key, label in CATEGORIES.items()}
 
