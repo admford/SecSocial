@@ -17,7 +17,10 @@ concurrency:
 
 jobs:
   add:
-    if: github.event.label.name == 'approved'
+    # Removal requests are handled by remove-meetup.yml instead
+    if: >-
+      github.event.label.name == 'approved' &&
+      !contains(github.event.issue.labels.*.name, 'removal-request')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

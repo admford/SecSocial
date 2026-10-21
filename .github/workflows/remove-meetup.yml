@@ -1,0 +1,62 @@
+name: Remove meetup on approval
+
+# Runs when you add the "approved" label to a removal request
+# (an issue labeled "removal-request"). Only people with triage access
+# or higher can label issues, so requesters can't approve their own.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: meetups-json
+  cancel-in-progress: false
+
+jobs:
+  remove:
+    if: >-
+      github.event.label.name == 'approved' &&
+      contains(github.event.issue.labels.*.name, 'removal-request')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove entry from meetups.json
+        id: remove
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python3 .github/scripts/remove_meetup.py
+
+      - name: Check the whole file is still valid
+        if: steps.remove.outputs.status == 'removed'
+        run: python3 .github/scripts/validate_meetups.py
+
+      - name: Commit
+        if: steps.remove.outputs.status == 'removed'
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          git add meetups.json
+          git commit -m "Remove meetup per #${ISSUE_NUMBER}"
+          git push
+
+      - name: Report back on the issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          STATUS: ${{ steps.remove.outputs.status }}
+        run: |
+          if [ -f result.md ]; then
+            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body-file result.md
+          fi
+          if [ "$STATUS" = "removed" ] && [ "${{ job.status }}" = "success" ]; then
+            gh issue close "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --reason completed
+          else
+            gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label approved
+          fi
