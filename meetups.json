@@ -334,6 +334,18 @@
       "schedule": "Second Friday of the month at 7pm",
       "type": "Cybersecurity, Hacking, etc.",
       "description": "A major Orange County security and hacking group, associated with the local 2600 group. Presenting projects is welcome and expected!"
+    },
+    {
+      "name": "LA2600",
+      "category": "organization",
+      "city": "Los Angeles (CA)",
+      "country": "United States",
+      "lat": 34.0597,
+      "lng": -118.2369,
+      "website": "https://www.meetup.com/la2600/",
+      "schedule": "First Friday of the month, 7pm",
+      "type": "Cybersecurity, Hacking, etc.",
+      "description": "One of the oldest hacker meetings in the US, going onto 25 years. Held at Philippes."
     }
   ]
 }
