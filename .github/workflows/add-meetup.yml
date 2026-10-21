@@ -12,7 +12,7 @@ body:
     id: name
     attributes:
       label: Meetup name
-      placeholder: e.g., BurbSec North
+      placeholder: e.g., BurbSec
     validations:
       required: true
 
