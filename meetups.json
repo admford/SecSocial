@@ -214,6 +214,18 @@
       "schedule": "Monthly",
       "type": "Cybersecurity",
       "description": "Regional DCG meetup for DCG312"
+    },
+    {
+      "name": "HackInBo",
+      "category": "conference",
+      "city": "Bologna (BO)",
+      "country": "Italy",
+      "lat": 44.5151,
+      "lng": 11.4091,
+      "website": "https://www.hackinbo.it",
+      "schedule": "Twice yearly, Spring and Winter",
+      "type": "Cybersecurity",
+      "description": "Italian cybersecurity conference that's been going on since 2013. With speakers in Italian and English."
     }
   ]
 }
