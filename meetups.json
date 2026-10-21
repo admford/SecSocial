@@ -274,6 +274,18 @@
       "schedule": "Usually held in September",
       "type": "Cybersecurity, AI",
       "description": "Well established and regarded infosec conference in Michigan. Held yearly for well over a decade."
+    },
+    {
+      "name": "BSides DFW",
+      "category": "conference",
+      "city": "Arlington (TX)",
+      "country": "United States",
+      "lat": 32.7327,
+      "lng": -97.1138,
+      "website": "https://www.bsidesdfw.com",
+      "schedule": "Yearly in November",
+      "type": "Cybersecurity",
+      "description": "A regular conference in the Dallas Fort Worth area, and has been going since 2010"
     }
   ]
 }
