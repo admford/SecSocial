@@ -382,6 +382,18 @@
       "schedule": "Wed 3–6pm  |  Thu 3–7pm  |  Fri 3–7pm  |  Sat 10am–5pm",
       "type": "Computer repair, building and donating to the community",
       "description": "Need a cheap computer? Want to donate your old equipment? Or want to help out by making sure people in need get their own working computer, since we live in a society that doing anything without one is almost impossible."
+    },
+    {
+      "name": "Hacker Dojo",
+      "category": "community",
+      "city": "Santa Clara (CA)",
+      "country": "USA",
+      "lat": 37.3954,
+      "lng": -121.9853,
+      "website": "https://hackerdojo.org/",
+      "schedule": "Reserve a 30 minute tour between 5pm and 7pm; Tuesdays to Saturdays. Open 24/7 for members.",
+      "type": "Security, Electronics, 3D Printing, fabrication and making",
+      "description": "Long running Makerspace in Silicon Valley, since 2009. It has changed locations over the years, but a great place to check out!"
     }
   ]
 }
