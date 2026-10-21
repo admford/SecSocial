@@ -151,6 +151,9 @@
         }
         textarea { resize: vertical; min-height: 120px; }
 
+        .popup-content p.popup-report { margin-top: 10px; padding-top: 8px; border-top: 1px solid #e2e8f0; font-size: 0.8rem; }
+        .popup-content p.popup-report a { color: #718096; font-weight: 400; }
+
         .coords { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; }
         .clear-pin {
             padding: 0 16px;
@@ -426,6 +429,7 @@
         function popupHtml(m, key) {
             const cat = categoryInfo(key);
             const url = safeUrl(m.website);
+            const removal = removalUrl(m);
             return `
                 <div class="popup-content">
                     <span class="badge" style="--c:${cat.color}">${esc(cat.label)}</span>
@@ -435,6 +439,7 @@
                     ${m.schedule ? `<p><strong>📅 Schedule:</strong> ${esc(m.schedule)}</p>` : ''}
                     ${m.description ? `<p>${esc(m.description)}</p>` : ''}
                     ${url ? `<p><strong>🔗 Website:</strong> <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Visit Meetup</a></p>` : ''}
+                    ${removal ? `<p class="popup-report"><a href="${esc(removal)}" target="_blank" rel="noopener noreferrer">Inactive or wrong? Request removal</a></p>` : ''}
                 </div>`;
         }
 
@@ -662,6 +667,21 @@
                 return { owner, repo };
             }
             return null;
+        }
+
+        // Link for a map popup: opens a pre-filled "Request a removal" issue.
+        // Name and city identify the entry, so they're copied exactly as stored.
+        function removalUrl(m) {
+            const target = resolveGithubRepo();
+            if (!target || !m.name || !m.city) return null;
+            const url = new URL(`https://github.com/${encodeURIComponent(target.owner)}/${encodeURIComponent(target.repo)}/issues/new`);
+            const p = url.searchParams;
+            p.set('template', 'remove-meetup.yml');
+            p.set('title', `[Removal] ${m.name} (${m.city})`);
+            p.set('labels', 'removal-request');
+            p.set('name', m.name);
+            p.set('city', m.city);
+            return url.href;
         }
 
         function githubUrl(entry) {
