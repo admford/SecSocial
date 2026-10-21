@@ -190,6 +190,18 @@
       "schedule": "Yearly in Spring",
       "type": "Cybersecurity",
       "description": "CypherCon is Wisconsin’s largest technology, cybersecurity, and hacker conference, bringing together information security professionals, hackers, technology leaders, creators, artists, makers, and curious innovators."
+    },
+    {
+      "name": "BSides312",
+      "category": "conference",
+      "city": "Chicago (IL)",
+      "country": "USA",
+      "lat": 41.9654,
+      "lng": -87.7442,
+      "website": "https://bsides312.org",
+      "schedule": "Yearly",
+      "type": "Cybersecurity",
+      "description": "BSides312 brings together security professionals, researchers, and enthusiasts for an unforgettable day of learning and networking — held the day after THOTCON, so it's easy to make a full weekend of it."
     }
   ]
 }
