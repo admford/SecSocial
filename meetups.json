@@ -286,6 +286,18 @@
       "schedule": "Yearly in November",
       "type": "Cybersecurity",
       "description": "A regular conference in the Dallas Fort Worth area, and has been going since 2010"
+    },
+    {
+      "name": "BSides Las Vegas",
+      "category": "conference",
+      "city": "Las Vegas (NV)",
+      "country": "USA",
+      "lat": 36.1136,
+      "lng": -115.1607,
+      "website": "https://bsideslv.org",
+      "schedule": "Yearly at about the same time as DEF CON and Blackhat",
+      "type": "Cybersecurity",
+      "description": "Probably one of the most well known of the BSides events across the world. A fixture during Hacker Summer Camp."
     }
   ]
 }
