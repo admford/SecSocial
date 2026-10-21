@@ -1,4 +1,4 @@
-name: Submit a meetup
+name: Add approved meetup
 description: Suggest a meetup, conference or group for the map. Submissions are reviewed before they appear.
 title: "[Meetup] "
 labels: ["submission"]
