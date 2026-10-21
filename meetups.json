@@ -202,6 +202,18 @@
       "schedule": "Yearly",
       "type": "Cybersecurity",
       "description": "BSides312 brings together security professionals, researchers, and enthusiasts for an unforgettable day of learning and networking — held the day after THOTCON, so it's easy to make a full weekend of it."
+    },
+    {
+      "name": "DEF CON Group Chicago",
+      "category": "organization",
+      "city": "Chicago (IL)",
+      "country": "USA",
+      "lat": 41.9627,
+      "lng": -87.6846,
+      "website": "https://dcgchicago.org/",
+      "schedule": "Monthly",
+      "type": "Cybersecurity",
+      "description": "Regional DCG meetup for DCG312"
     }
   ]
 }
