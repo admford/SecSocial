@@ -358,6 +358,18 @@
       "schedule": "Tours Tuesdays at 8pm; Use is member limited via key fob",
       "type": "Security, Electronics, 3D Printing, fabrication and making",
       "description": "One of Chicago's longest running maker spaces, offering a wide range of fun things to learn and do."
+    },
+    {
+      "name": "Workshop 88",
+      "category": "community",
+      "city": "Glen Ellyn (IL)",
+      "country": "USA",
+      "lat": 41.877,
+      "lng": -88.0662,
+      "website": "https://workshop88.com/",
+      "schedule": "Open to the public Thursdays from 7pm to 9pm; Open 24/7 for members",
+      "type": "Security, Electronics, 3D Printing, fabrication and making",
+      "description": "Long running makerspace in the western Chicago suburbs (since 2010)."
     }
   ]
 }
