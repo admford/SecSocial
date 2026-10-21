@@ -238,6 +238,18 @@
       "schedule": "Every year, starting the day after Christmas.",
       "type": "Cybersecurity, Hacking",
       "description": "One of the largest and longest lasting cybersecurity conferences in the world. Held in Germany after the Christmas holidays until the New Year."
+    },
+    {
+      "name": "ChiBrrCon",
+      "category": "conference",
+      "city": "Chicago (IL)",
+      "country": "USA",
+      "lat": 41.8668,
+      "lng": -87.6462,
+      "website": "https://chibrrcon.com",
+      "schedule": "Early February each year",
+      "type": "Cybersecurity",
+      "description": "Long running winter security conference in Chicago. Previously held on the IIT campus. It's aimed at all professionals and students a like."
     }
   ]
 }
