@@ -250,6 +250,18 @@
       "schedule": "Early February each year",
       "type": "Cybersecurity",
       "description": "Long running winter security conference in Chicago. Previously held on the IIT campus. It's aimed at all professionals and students a like."
+    },
+    {
+      "name": "CONFidence Conference",
+      "category": "conference",
+      "city": "Krakow",
+      "country": "Poland",
+      "lat": 50.0597,
+      "lng": 20.0094,
+      "website": "https://confidence-conference.org/",
+      "schedule": "Late May/Early June yearly",
+      "type": "Cybersecurity",
+      "description": "One of the largest and longest running (20 years) cybersecurity conferences in Poland."
     }
   ]
 }
