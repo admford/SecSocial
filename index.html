@@ -87,6 +87,87 @@
         }
         .map-notice.show { display: block; }
 
+        /* ---- Address search ---- */
+        .map-search {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1001;
+            width: min(360px, calc(100% - 70px));
+            font-size: 0.95rem;
+        }
+        .map-search form {
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        .map-search input {
+            flex: 1;
+            min-width: 0;
+            border: none;
+            border-radius: 0;
+            padding: 10px 12px;
+            font-size: 0.95rem;
+        }
+        .map-search input:focus { box-shadow: inset 0 0 0 2px #667eea; }
+        .map-search button {
+            border: none;
+            background: #667eea;
+            color: white;
+            padding: 0 14px;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .map-search button:disabled { opacity: 0.6; cursor: wait; }
+        .search-results {
+            list-style: none;
+            margin-top: 6px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        .search-results:empty { display: none; }
+        .search-results button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-bottom: 1px solid #edf2f7;
+            background: white;
+            color: #2d3748;
+            padding: 10px 12px;
+            font: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        .search-results button:hover, .search-results button:focus { background: #ebf4ff; outline: none; }
+        .search-results .search-msg { padding: 10px 12px; color: #4a5568; font-size: 0.9rem; }
+        .search-results .search-credit { padding: 6px 12px; color: #a0aec0; font-size: 0.75rem; background: #f7fafc; }
+        .search-results .search-credit a { color: inherit; }
+
+        .search-popup { font-size: 0.9rem; padding: 12px; color: #2d3748; max-width: 260px; }
+        .search-popup button {
+            margin-top: 10px;
+            width: 100%;
+            padding: 8px 10px;
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: white;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .map-search { left: 56px; right: 10px; width: auto; }
+            .map-notice { top: 64px; width: calc(100% - 32px); }
+        }
+
         /* ---- Markers ---- */
         .meetup-marker, .pending-marker { background: none; border: none; }
         .meetup-marker .pin, .pending-marker .pin {
@@ -228,6 +309,13 @@
 
         <div class="map-wrap">
             <div id="map"></div>
+            <div class="map-search">
+                <form id="searchForm" role="search">
+                    <input type="search" id="searchInput" placeholder="Search a city or address…" aria-label="Search a city or address" maxlength="200" autocomplete="off">
+                    <button type="submit" id="searchBtn">Search</button>
+                </form>
+                <ul class="search-results" id="searchResults" aria-live="polite"></ul>
+            </div>
             <div class="map-notice" id="mapNotice" role="alert"></div>
         </div>
 
@@ -282,7 +370,7 @@
                                 <input type="number" id="lng" name="lng" step="any" min="-180" max="180" placeholder="Longitude" aria-label="Longitude">
                                 <button type="button" class="clear-pin" id="clearPin">Clear</button>
                             </div>
-                            <span class="hint">Optional. Click the map above to drop a pin (you can drag it), or type the coordinates.</span>
+                            <span class="hint">Optional. Search an address on the map and choose "Use this location", click the map to drop a pin (you can drag it), or type the coordinates.</span>
                         </div>
 
                         <div class="form-group full-width">
@@ -595,6 +683,149 @@
         latInput.addEventListener('change', syncFromInputs);
         lngInput.addEventListener('change', syncFromInputs);
         document.getElementById('clearPin').addEventListener('click', clearPending);
+
+        // --- Address search ----------------------------------------------
+        // Uses OpenStreetMap's Nominatim geocoder. Its usage policy requires:
+        // searches only when the user asks (no autocomplete), at most one
+        // request per second, caching repeat queries, and OSM attribution.
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+        const geoCache = new Map();
+        let lastGeoRequest = 0;
+        let searchMarker = null;
+
+        async function geocode(query) {
+            const key = query.trim().toLowerCase();
+            if (geoCache.has(key)) return geoCache.get(key);
+            const wait = 1100 - (Date.now() - lastGeoRequest);
+            if (wait > 0) await new Promise(r => setTimeout(r, wait));
+            lastGeoRequest = Date.now();
+            const url = new URL('https://nominatim.openstreetmap.org/search');
+            url.search = new URLSearchParams({ q: query, format: 'jsonv2', limit: '5', addressdetails: '1' });
+            const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            const results = Array.isArray(data) ? data : [];
+            geoCache.set(key, results);
+            return results;
+        }
+
+        function placeParts(result) {
+            const a = result.address || {};
+            return {
+                city: a.city || a.town || a.village || a.hamlet || a.municipality || a.suburb || a.county || '',
+                country: a.country || ''
+            };
+        }
+
+        function addSearchItem(node) {
+            const li = document.createElement('li');
+            li.appendChild(node);
+            searchResults.appendChild(li);
+        }
+
+        function searchMessage(text) {
+            const div = document.createElement('div');
+            div.className = 'search-msg';
+            div.textContent = text;
+            addSearchItem(div);
+        }
+
+        function searchCredit() {
+            const div = document.createElement('div');
+            div.className = 'search-credit';
+            div.innerHTML = 'Search by Nominatim · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors';
+            addSearchItem(div);
+        }
+
+        function clearSearchResults() {
+            searchResults.replaceChildren();
+        }
+
+        function showSearchResult(result) {
+            clearSearchResults();
+            const lat = Number(result.lat);
+            const lon = Number(result.lon);
+            if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+
+            const bb = (result.boundingbox || []).map(Number); // [south, north, west, east]
+            if (bb.length === 4 && bb.every(Number.isFinite)) {
+                map.fitBounds([[bb[0], bb[2]], [bb[1], bb[3]]], { maxZoom: 16 });
+            } else {
+                map.setView([lat, lon], 14);
+            }
+
+            // Build the popup with DOM nodes so place names are never parsed as HTML
+            const box = document.createElement('div');
+            box.className = 'search-popup';
+            const name = document.createElement('div');
+            name.textContent = result.display_name || 'Search result';
+            const useBtn = document.createElement('button');
+            useBtn.type = 'button';
+            useBtn.textContent = 'Use this location for a new meetup';
+            useBtn.addEventListener('click', () => {
+                setPending(L.latLng(lat, lon));
+                const parts = placeParts(result);
+                const city = document.getElementById('city');
+                const country = document.getElementById('country');
+                if (!city.value && parts.city) city.value = parts.city;
+                if (!country.value && parts.country) country.value = parts.country;
+                map.closePopup();
+                document.querySelector('.form-section').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('name').focus({ preventScroll: true });
+            });
+            box.append(name, useBtn);
+
+            if (searchMarker) searchMarker.remove();
+            searchMarker = L.circleMarker([lat, lon], { radius: 9, color: '#1a202c', weight: 3, fillColor: '#ffffff', fillOpacity: 0.9 })
+                .addTo(map)
+                .bindPopup(box, { maxWidth: 280 })
+                .openPopup();
+        }
+
+        searchForm.addEventListener('submit', async e => {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            clearSearchResults();
+            if (query.length < 3) {
+                searchMessage('Type at least 3 characters.');
+                return;
+            }
+            searchBtn.disabled = true;
+            try {
+                const results = await geocode(query);
+                if (!results.length) {
+                    searchMessage('No places found. Try adding a city or country.');
+                    searchCredit();
+                } else if (results.length === 1) {
+                    showSearchResult(results[0]);
+                } else {
+                    results.forEach(r => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.textContent = r.display_name;
+                        btn.addEventListener('click', () => showSearchResult(r));
+                        addSearchItem(btn);
+                    });
+                    searchCredit();
+                    searchResults.querySelector('button').focus();
+                }
+            } catch (err) {
+                console.error('Search failed:', err);
+                searchMessage('Search isn\'t available right now. Please try again in a moment.');
+            } finally {
+                searchBtn.disabled = false;
+            }
+        });
+
+        searchInput.addEventListener('keydown', e => {
+            if (e.key === 'Escape') clearSearchResults();
+        });
+        searchResults.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { clearSearchResults(); searchInput.focus(); }
+        });
 
         // --- Form setup --------------------------------------------------
         const form = document.getElementById('meetupForm');
