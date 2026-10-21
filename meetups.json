@@ -226,6 +226,18 @@
       "schedule": "Twice yearly, Spring and Winter",
       "type": "Cybersecurity",
       "description": "Italian cybersecurity conference that's been going on since 2013. With speakers in Italian and English."
+    },
+    {
+      "name": "Chaos Communication Congress",
+      "category": "conference",
+      "city": "Hamburg",
+      "country": "Germany",
+      "lat": 53.5626,
+      "lng": 9.9757,
+      "website": "https://events.ccc.de/en/",
+      "schedule": "Every year, starting the day after Christmas.",
+      "type": "Cybersecurity, Hacking",
+      "description": "One of the largest and longest lasting cybersecurity conferences in the world. Held in Germany after the Christmas holidays until the New Year."
     }
   ]
 }
