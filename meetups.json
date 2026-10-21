@@ -30,7 +30,7 @@
       "city": "Hickory Hills",
       "country": "USA",
       "lat": 41.721953247642276,
-      "lng":  -87.81821843793688,
+      "lng": -87.81821843793688,
       "website": "https://www.meetup.com/burbsec/",
       "schedule": "Second Thursday of the month, from about 6 PM",
       "type": "Cybersecurity",
@@ -47,7 +47,8 @@
       "schedule": "Fourth Thursday of the month, from about 6 PM",
       "type": "Cybersecurity",
       "description": "Casual social meetup for security folks. Check the Meetup page for the current venue."
-    },    {
+    },
+    {
       "name": "BurbSec North",
       "category": "social",
       "city": "Wheeling",
@@ -76,7 +77,7 @@
       "category": "social",
       "city": "Mishawaka",
       "country": "USA",
-      "lat": 41.65848892555411, 
+      "lat": 41.65848892555411,
       "lng": -86.17643554712234,
       "website": "https://www.meetup.com/burbsec/",
       "schedule": "Second Thursday of the month, from about 6 PM",
@@ -88,7 +89,7 @@
       "category": "social",
       "city": "Greendale",
       "country": "USA",
-      "lat": 42.94725126549995,  
+      "lat": 42.94725126549995,
       "lng": -88.00535194432858,
       "website": "https://www.meetup.com/burbsec-mke/events/",
       "schedule": "Third Thursday of the month, from about 6 PM",
@@ -100,7 +101,7 @@
       "category": "social",
       "city": "Fridley",
       "country": "USA",
-      "lat": 45.05562134589388, 
+      "lat": 45.05562134589388,
       "lng": -93.27345787151661,
       "website": "https://www.eventbrite.com/e/burbsec-mpls-infosec-meetup-tickets-1749486103029",
       "schedule": "Third Thursday of the month, from about 4 PM",
@@ -136,7 +137,7 @@
       "category": "social",
       "city": "Galway",
       "country": "Ireland",
-      "lat": 53.27475870321143, 
+      "lat": 53.27475870321143,
       "lng": -9.046951915410576,
       "website": "https://www.meetup.com/burbsec-galway/",
       "schedule": "Last Thursday of the month, from about 6 PM",
@@ -149,7 +150,7 @@
       "city": "Las Vegas",
       "country": "USA",
       "lat": 36.133254028877204,
-      "lng":  -115.15925910197042,
+      "lng": -115.15925910197042,
       "website": "https://defcon.org",
       "schedule": "Annual conference (August)",
       "type": "Cybersecurity",
@@ -165,6 +166,18 @@
       "website": "https://www.blackhat.com",
       "schedule": "Annual conference (August)",
       "type": "Information Security"
+    },
+    {
+      "name": "Thotcon",
+      "category": "conference",
+      "city": "Chicago, IL",
+      "country": "USA",
+      "lat": 41.9653,
+      "lng": -87.7442,
+      "website": "https://thotcon.org",
+      "schedule": "Once every two years",
+      "type": "Cybersecurity",
+      "description": "One of the original conferences held in Chicago for over a decade at this point."
     }
   ]
 }
