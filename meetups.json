@@ -3,7 +3,7 @@
     {
       "name": "BurbSec Prime",
       "category": "social",
-      "city": "Schaumburg",
+      "city": "Schaumburg (IL)",
       "country": "USA",
       "lat": 42.045862,
       "lng": -88.034722,
@@ -15,7 +15,7 @@
     {
       "name": "BurbSec Pilsen",
       "category": "social",
-      "city": "Chicago",
+      "city": "Chicago (IL)",
       "country": "USA",
       "lat": 41.85382530593631,
       "lng": -87.65278866546329,
@@ -27,7 +27,7 @@
     {
       "name": "BurbSec South",
       "category": "social",
-      "city": "Hickory Hills",
+      "city": "Hickory Hills (IL)",
       "country": "USA",
       "lat": 41.721953247642276,
       "lng": -87.81821843793688,
@@ -39,7 +39,7 @@
     {
       "name": "BurbSec Northwest",
       "category": "social",
-      "city": "Crystal Lake",
+      "city": "Crystal Lake (IL)",
       "country": "USA",
       "lat": 42.245531208433405,
       "lng": -88.3166528201958,
@@ -51,10 +51,10 @@
     {
       "name": "BurbSec North",
       "category": "social",
-      "city": "Wheeling",
+      "city": "Wheeling (IL)",
       "country": "USA",
-      "lat": 42.136492,
-      "lng": -87.904111,
+      "lat": 42.13628636054314, 
+      "lng": -87.904216306922,
       "website": "https://www.meetup.com/burbsec/",
       "schedule": "Second Thursday of the month, from about 6 PM",
       "type": "Cybersecurity",
@@ -63,7 +63,7 @@
     {
       "name": "BurbSec West",
       "category": "social",
-      "city": "Naperville",
+      "city": "Naperville (IL)",
       "country": "USA",
       "lat": 41.80472147468378,
       "lng": -88.12833127726628,
@@ -75,7 +75,7 @@
     {
       "name": "BurbSec South Bend",
       "category": "social",
-      "city": "Mishawaka",
+      "city": "Mishawaka (IN)",
       "country": "USA",
       "lat": 41.65848892555411,
       "lng": -86.17643554712234,
@@ -87,7 +87,7 @@
     {
       "name": "BurbSec Milwaukee",
       "category": "social",
-      "city": "Greendale",
+      "city": "Greendale (WI)",
       "country": "USA",
       "lat": 42.94725126549995,
       "lng": -88.00535194432858,
@@ -99,7 +99,7 @@
     {
       "name": "BurbSec Minneapolis",
       "category": "social",
-      "city": "Fridley",
+      "city": "Fridley (MN)",
       "country": "USA",
       "lat": 45.05562134589388,
       "lng": -93.27345787151661,
@@ -111,7 +111,7 @@
     {
       "name": "BurbSec East",
       "category": "social",
-      "city": "Chicago",
+      "city": "Chicago (IL)",
       "country": "USA",
       "lat": 41.92003522323685,
       "lng": -87.69282022970451,
@@ -123,7 +123,7 @@
     {
       "name": "BurbSec Las Vegas",
       "category": "social",
-      "city": "Las Vegas",
+      "city": "Las Vegas (NV)",
       "country": "USA",
       "lat": 36.07712193212639,
       "lng": -115.26134821278752,
@@ -147,7 +147,7 @@
     {
       "name": "DEF CON",
       "category": "conference",
-      "city": "Las Vegas",
+      "city": "Las Vegas (NV)",
       "country": "USA",
       "lat": 36.133254028877204,
       "lng": -115.15925910197042,
@@ -159,7 +159,7 @@
     {
       "name": "Black Hat USA",
       "category": "conference",
-      "city": "Las Vegas",
+      "city": "Las Vegas (NV)",
       "country": "USA",
       "lat": 36.09034699571268,
       "lng": -115.17697812263074,
@@ -170,7 +170,7 @@
     {
       "name": "Thotcon",
       "category": "conference",
-      "city": "Chicago, IL",
+      "city": "Chicago (IL)",
       "country": "USA",
       "lat": 41.9653,
       "lng": -87.7442,
