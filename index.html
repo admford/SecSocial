@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Meetups Around the World</title>
+    <title>sec.social · Infosec &amp; Tech Meetups Map</title>
+    <meta name="description" content="A community map of cybersecurity and tech meetups, conferences, chapters, student groups and makerspaces around the world. Find one near you or submit your own.">
+    <link rel="canonical" href="https://sec.social/">
+    <meta name="robots" content="index, follow">
+
+    <!-- Link previews (LinkedIn, Slack, Discord, Mastodon, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sec.social">
+    <meta property="og:url" content="https://sec.social/">
+    <meta property="og:title" content="sec.social · Infosec &amp; Tech Meetups Map">
+    <meta property="og:description" content="A community map of cybersecurity and tech meetups, conferences, chapters, student groups and makerspaces. Find one near you or submit your own.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sec.social · Infosec &amp; Tech Meetups Map">
+    <meta name="twitter:description" content="A community map of cybersecurity and tech meetups, conferences, chapters, student groups and makerspaces.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "sec.social",
+      "url": "https://sec.social/",
+      "description": "A community map of cybersecurity and tech meetups, conferences, chapters, student groups and makerspaces around the world."
+    }
+    </script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     <style>
@@ -34,6 +57,8 @@
 
         h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
         .subtitle { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
+        .header-links { margin-top: 12px; font-size: 0.95rem; }
+        .header-links a { color: #c3dafe; }
 
         /* ---- Category filters ---- */
         .filters {
@@ -299,6 +324,7 @@
         <header>
             <h1>🌍 Tech Meetups Around the World</h1>
             <p class="subtitle">Discover and connect with tech &amp; cybersecurity communities globally</p>
+            <p class="header-links"><a href="meetups.html">Browse all meetups as a list →</a></p>
         </header>
 
         <nav class="filters" id="filters" aria-label="Filter meetups by category">
