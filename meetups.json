@@ -310,6 +310,18 @@
       "schedule": "First Thursday of the month",
       "type": "Cybersecurity",
       "description": "Chicago chapter of ISSA, which is very active locally and at local conferences. Regularly helps out students and people new to the field."
+    },
+    {
+      "name": "OC2600",
+      "category": "organization",
+      "city": "Fullerton (CA)",
+      "country": "USA",
+      "lat": 33.8697,
+      "lng": -117.9171,
+      "website": "https://www.meetup.com/oc2600/",
+      "schedule": "First Friday of every month",
+      "type": "Cybersecurity, Hacking, etc.",
+      "description": "The Orange County 2600 group. Meetings usually held at the 23b Hackerspace."
     }
   ]
 }
