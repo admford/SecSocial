@@ -34,6 +34,10 @@ jobs:
         if: steps.remove.outputs.status == 'removed'
         run: python3 .github/scripts/validate_meetups.py
 
+      - name: Rebuild the meetup list page
+        if: steps.remove.outputs.status == 'removed'
+        run: python3 .github/scripts/build_list.py
+
       - name: Commit
         if: steps.remove.outputs.status == 'removed'
         env:
@@ -41,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
-          git add meetups.json
+          git add meetups.json meetups.html
           git commit -m "Remove meetup per #${ISSUE_NUMBER}"
           git push
 

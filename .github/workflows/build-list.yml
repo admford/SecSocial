@@ -1,0 +1,41 @@
+name: Rebuild meetup list
+
+# Rebuilds meetups.html when meetups.json is edited by hand (in the web
+# editor or a normal commit). Approvals and removals rebuild it themselves,
+# because commits made by workflows don't start other workflows.
+on:
+  push:
+    branches: [main]
+    paths: ["meetups.json", ".github/scripts/build_list.py", ".github/scripts/meetup_rules.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: meetups-json
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check meetups.json is valid
+        run: python3 .github/scripts/validate_meetups.py
+
+      - name: Build meetups.html
+        run: python3 .github/scripts/build_list.py
+
+      - name: Commit if it changed
+        run: |
+          if git diff --quiet -- meetups.html && git ls-files --error-unmatch meetups.html >/dev/null 2>&1; then
+            echo "meetups.html is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898341+github-actions[bot]@users.noreply.github.com"
+          git add meetups.html
+          git commit -m "Rebuild meetup list"
+          git push
