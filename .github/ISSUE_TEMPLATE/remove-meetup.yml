@@ -1,0 +1,42 @@
+name: Request a removal
+description: Report a meetup on the map that's no longer active or has wrong details. Requests are reviewed before anything is removed.
+title: "[Removal] "
+labels: ["removal-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the map accurate. If you came here from the map, the meetup's name and city are already filled in; please leave them exactly as they are so the right entry is found.
+
+  - type: input
+    id: name
+    attributes:
+      label: Meetup name
+    validations:
+      required: true
+
+  - type: input
+    id: city
+    attributes:
+      label: City
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason
+      options:
+        - No longer active
+        - Wrong location on the map
+        - Wrong or outdated details
+        - Duplicate entry
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details (optional)
+      description: Anything that helps, such as a link showing it ended, or the correct location or details.
