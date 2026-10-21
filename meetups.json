@@ -346,6 +346,18 @@
       "schedule": "First Friday of the month, 7pm",
       "type": "Cybersecurity, Hacking, etc.",
       "description": "One of the oldest hacker meetings in the US, going onto 25 years. Held at Philippes."
+    },
+    {
+      "name": "Pumping Station: One",
+      "category": "community",
+      "city": "Chicago (IL)",
+      "country": "United States",
+      "lat": 41.9453,
+      "lng": -87.7066,
+      "website": "https://wiki.pumpingstationone.org/wiki/Main_Page",
+      "schedule": "Tours Tuesdays at 8pm; Use is member limited via key fob",
+      "type": "Security, Electronics, 3D Printing, fabrication and making",
+      "description": "One of Chicago's longest running maker spaces, offering a wide range of fun things to learn and do."
     }
   ]
 }
