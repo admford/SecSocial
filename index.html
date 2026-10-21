@@ -461,6 +461,20 @@
         const counts = {};          // category key -> number of meetups
         const active = new Set();   // category keys currently shown
 
+        // --- Analytics (GoatCounter events) -------------------------------
+        // Counts actions, not people: no search text, form contents or
+        // personal data is sent. Does nothing if count.js is blocked or
+        // hasn't loaded yet.
+        function track(name, title) {
+            try {
+                if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+                    window.goatcounter.count({ path: name.slice(0, 200), title: (title || name).slice(0, 200), event: true });
+                }
+            } catch (err) {
+                console.warn('Analytics event not sent:', err);
+            }
+        }
+
         // --- Helpers -----------------------------------------------------
         function esc(value) {
             return String(value ?? '').replace(/[&<>"']/g, c => ({
@@ -527,8 +541,8 @@
                     ${m.type ? `<p><strong>🏷️ Focus:</strong> ${esc(m.type)}</p>` : ''}
                     ${m.schedule ? `<p><strong>📅 Schedule:</strong> ${esc(m.schedule)}</p>` : ''}
                     ${m.description ? `<p>${esc(m.description)}</p>` : ''}
-                    ${url ? `<p><strong>🔗 Website:</strong> <a href="${esc(url)}" target="_blank" rel="noopener noreferrer">Visit Meetup</a></p>` : ''}
-                    ${removal ? `<p class="popup-report"><a href="${esc(removal)}" target="_blank" rel="noopener noreferrer">Inactive or wrong? Request removal</a></p>` : ''}
+                    ${url ? `<p><strong>🔗 Website:</strong> <a href="${esc(url)}" target="_blank" rel="noopener noreferrer" data-track="website" data-meetup="${esc(m.name)}">Visit Meetup</a></p>` : ''}
+                    ${removal ? `<p class="popup-report"><a href="${esc(removal)}" target="_blank" rel="noopener noreferrer" data-track="removal" data-meetup="${esc(m.name)}">Inactive or wrong? Request removal</a></p>` : ''}
                 </div>`;
         }
 
@@ -640,7 +654,8 @@
                 counts[key] = (counts[key] || 0) + 1;
                 L.marker([lat, lng], { icon: iconFor(key), title: m.name || '' })
                     .addTo(layers[key])
-                    .bindPopup(popupHtml(m, key), { maxWidth: 300 });
+                    .bindPopup(popupHtml(m, key), { maxWidth: 300 })
+                    .on('popupopen', () => track(`meetup-view: ${m.name || 'unnamed'}`, `Opened ${m.name || 'unnamed'} (${categoryInfo(key).label})`));
             });
 
             // Categories with no meetups yet still get a (toggleable) chip
@@ -767,6 +782,7 @@
             useBtn.type = 'button';
             useBtn.textContent = 'Use this location for a new meetup';
             useBtn.addEventListener('click', () => {
+                track('use-search-location', 'Used a search result as a new meetup location');
                 setPending(L.latLng(lat, lon));
                 const parts = placeParts(result);
                 const city = document.getElementById('city');
@@ -797,6 +813,7 @@
             searchBtn.disabled = true;
             try {
                 const results = await geocode(query);
+                track('address-search', 'Searched the map for an address');
                 if (!results.length) {
                     searchMessage('No places found. Try adding a city or country.');
                     searchCredit();
@@ -1020,13 +1037,26 @@
             // Open new tabs synchronously (no await first) so popup blockers allow them
             if (CONFIG.submitMode === 'github') {
                 const href = githubUrl(entry);
-                href ? openExternal(href, 'GitHub') : notReady();
+                if (href) {
+                    openExternal(href, 'GitHub');
+                    track(`submit-start: ${entry.category}`, `Started a ${categoryInfo(entry.category).label} submission on GitHub`);
+                } else {
+                    notReady();
+                }
             } else if (CONFIG.submitMode === 'google') {
                 const href = googleUrl(entry);
                 href ? openExternal(href, 'Google Forms') : notReady();
             } else {
                 if (!(await sendFormspree(data, entry))) notReady();
             }
+        });
+
+        document.getElementById('map').addEventListener('click', e => {
+            const link = e.target.closest('a[data-track]');
+            if (!link) return;
+            const name = link.dataset.meetup || 'unnamed';
+            if (link.dataset.track === 'website') track(`meetup-website: ${name}`, `Visited ${name}'s website`);
+            if (link.dataset.track === 'removal') track(`removal-click: ${name}`, `Opened a removal request for ${name}`);
         });
 
         document.addEventListener('DOMContentLoaded', initMap);
