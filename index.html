@@ -321,8 +321,8 @@
             dataUrl: 'meetups.json',
 
             github: {
-                owner: 'YOUR-USERNAME',
-                repo: 'meetups',
+                owner: 'admford',
+                repo: 'SecSocial',
                 template: 'new-meetup.yml',
                 label: 'submission'
             },
@@ -649,10 +649,26 @@
         }
 
         // --- Submission methods -----------------------------------------
+        // Use CONFIG.github if filled in; otherwise work it out from a
+        // username.github.io/repo address. Custom domains need CONFIG set.
+        function resolveGithubRepo() {
+            const g = CONFIG.github;
+            if (g.owner !== 'YOUR-USERNAME') return { owner: g.owner, repo: g.repo };
+            const host = location.hostname.toLowerCase();
+            if (host.endsWith('.github.io')) {
+                const owner = host.split('.')[0];
+                const seg = location.pathname.split('/').filter(Boolean)[0];
+                const repo = (seg && !seg.includes('.')) ? seg : host; // user site lives in owner.github.io repo
+                return { owner, repo };
+            }
+            return null;
+        }
+
         function githubUrl(entry) {
             const g = CONFIG.github;
-            if (g.owner === 'YOUR-USERNAME') return null;
-            const url = new URL(`https://github.com/${g.owner}/${g.repo}/issues/new`);
+            const target = resolveGithubRepo();
+            if (!target) return null;
+            const url = new URL(`https://github.com/${encodeURIComponent(target.owner)}/${encodeURIComponent(target.repo)}/issues/new`);
             const p = url.searchParams;
             p.set('template', g.template);
             p.set('title', `[Meetup] ${entry.name}`);
