@@ -370,6 +370,18 @@
       "schedule": "Open to the public Thursdays from 7pm to 9pm; Open 24/7 for members",
       "type": "Security, Electronics, 3D Printing, fabrication and making",
       "description": "Long running makerspace in the western Chicago suburbs (since 2010)."
+    },
+    {
+      "name": "Free Geek Chicago",
+      "category": "community",
+      "city": "Chicago (IL)",
+      "country": "USA",
+      "lat": 41.6907,
+      "lng": -87.7009,
+      "website": "https://freegeekchi.org",
+      "schedule": "Wed 3–6pm  |  Thu 3–7pm  |  Fri 3–7pm  |  Sat 10am–5pm",
+      "type": "Computer repair, building and donating to the community",
+      "description": "Need a cheap computer? Want to donate your old equipment? Or want to help out by making sure people in need get their own working computer, since we live in a society that doing anything without one is almost impossible."
     }
   ]
 }
