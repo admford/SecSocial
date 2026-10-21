@@ -262,6 +262,18 @@
       "schedule": "Late May/Early June yearly",
       "type": "Cybersecurity",
       "description": "One of the largest and longest running (20 years) cybersecurity conferences in Poland."
+    },
+    {
+      "name": "GrrCON",
+      "category": "conference",
+      "city": "Grand Rapids (MI)",
+      "country": "United States",
+      "lat": 42.9693,
+      "lng": -85.672,
+      "website": "https://grrcon.com",
+      "schedule": "Usually held in September",
+      "type": "Cybersecurity, AI",
+      "description": "Well established and regarded infosec conference in Michigan. Held yearly for well over a decade."
     }
   ]
 }
