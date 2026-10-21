@@ -1,0 +1,20 @@
+name: Validate meetups.json
+
+# Runs on every change to the data file, including edits made in the
+# GitHub web editor. A red X means the map will break until it's fixed.
+on:
+  push:
+    paths: ["meetups.json", ".github/scripts/**"]
+  pull_request:
+    paths: ["meetups.json", ".github/scripts/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 .github/scripts/validate_meetups.py
