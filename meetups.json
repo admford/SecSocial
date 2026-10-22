@@ -430,6 +430,18 @@
       "schedule": "Held in mid October.",
       "type": "Operational/Industrial Technology Security",
       "description": "French BSides event with a specialization in OT Security. Sessions primarily in French, English is also welcome."
+    },
+    {
+      "name": "BSides Tirana",
+      "category": "conference",
+      "city": "Tirana",
+      "country": "Albania",
+      "lat": 41.323,
+      "lng": 19.8216,
+      "website": "https://www.eventbrite.com/e/bsides-tirana-2026-tickets-1998421417255",
+      "schedule": "Held in October",
+      "type": "Cybersecurity",
+      "description": "BSides in Albania! 5 years going strong, and other than talks, there are also workshops for those interested. However for 2026 it is postponed, new date to be decided."
     }
   ]
 }
