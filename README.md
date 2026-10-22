@@ -3,6 +3,16 @@
 A community map of security and tech meetups, conferences, chapters and
 student groups. Live at **[sec.social](https://sec.social)**.
 
+I know there are already other sites that list out local tech and cybersecurity meetups out there.
+But I found them often out of date (events and groups that don't exist any more), that rely on keeping
+you on their site and providing the information about a meetup, without sending you directly to the source.
+
+This site's objective is to be as simple as possible. Just a map with colored dots. Easy to find something
+near you, or just to explore where we are. If you see that there's a meetup or conference missing, feel free
+to add it yourself through the form below. Meetup or conference doesn't exist, request it's removal.
+
+Simplicity for sanity's sake.
+
 ## Add or update a meetup
 
 - **Add a meetup:** use the form on [sec.social](https://sec.social), or open a
