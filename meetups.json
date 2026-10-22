@@ -196,7 +196,7 @@
       "category": "conference",
       "city": "Chicago (IL)",
       "country": "USA",
-      "lat": 41.96560050625494, 
+      "lat": 41.96560050625494,
       "lng": -87.7444265385367,
       "website": "https://bsides312.org",
       "schedule": "Yearly",
@@ -418,6 +418,18 @@
       "schedule": "Yearly, usually mid September",
       "type": "Cybersecurity",
       "description": "Local cybersecurity conference with an emphasis on the defensive arts and techniques in our industry."
+    },
+    {
+      "name": "BSides OT Paris",
+      "category": "conference",
+      "city": "Paris",
+      "country": "France",
+      "lat": 48.8513,
+      "lng": 2.2883,
+      "website": "https://www.bsides-ot.fr",
+      "schedule": "Held in mid October.",
+      "type": "Operational/Industrial Technology Security",
+      "description": "French BSides event with a specialization in OT Security. Sessions primarily in French, English is also welcome."
     }
   ]
 }
