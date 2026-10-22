@@ -406,6 +406,18 @@
       "schedule": "Usually held in early November",
       "type": "Cybersecurity",
       "description": "Established Security conference in Sydney, initially established in 2019 and still going strong!"
+    },
+    {
+      "name": "BlueTeamCon",
+      "category": "conference",
+      "city": "Chicago (IL)",
+      "country": "USA",
+      "lat": 41.8874,
+      "lng": -87.6195,
+      "website": "https://blueteamcon.com",
+      "schedule": "Yearly, usually mid September",
+      "type": "Cybersecurity",
+      "description": "Local cybersecurity conference with an emphasis on the defensive arts and techniques in our industry."
     }
   ]
 }
