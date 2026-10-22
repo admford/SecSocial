@@ -9,7 +9,7 @@ you on their site and providing the information about a meetup, without sending 
 
 This site's objective is to be as simple as possible. Just a map with colored dots. Easy to find something
 near you, or just to explore where we are. If you see that there's a meetup or conference missing, feel free
-to add it yourself through the form below. Meetup or conference doesn't exist, request it's removal.
+to add it yourself through the form below. Meetup or conference doesn't exist? Just request it's removal.
 
 Simplicity for sanity's sake.
 
