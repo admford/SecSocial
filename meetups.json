@@ -442,6 +442,18 @@
       "schedule": "Held in October",
       "type": "Cybersecurity",
       "description": "BSides in Albania! 5 years going strong, and other than talks, there are also workshops for those interested. However for 2026 it is postponed, new date to be decided."
+    },
+    {
+      "name": "DenverSec",
+      "category": "social",
+      "city": "Denver",
+      "country": "United States",
+      "lat": 39.7653,
+      "lng": -104.9789,
+      "website": "https://denversec.org",
+      "schedule": "Usually third Wednesday of the month. Starting at 7pm",
+      "type": "Cybersecurity",
+      "description": "The Denver meet-up is designed specifically to be a social gathering. There are no presentations or slide decks and sales pitches are discouraged. All are welcome -- even if you're not working in the industry!"
     }
   ]
 }
